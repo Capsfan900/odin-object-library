@@ -32,14 +32,20 @@
 
     <dialog>
         <form>
-            <input type="text" id="bookTitle" placeholder="Book Title">
-            <input type="text" id="bookAuthor" placeholder="Author">
-            <input type="text" id="bookPages" placeholder="Pages">
+            <label>Title<br>
+                <input type="text" id="bookTitle" placeholder="Book Title">
+            </label>
+            <label>Author<br>
+                <input type="text" id="bookAuthor" placeholder="Author">
+            </label>
+            <label>Number Of Pages<br>
+                <input type="number" id="bookPages" placeholder="Pages">
+            </label>
             <label for="bookRead">
                 <input type="checkbox" id="bookRead">
-                Read?
+                Have You Read This Book?
             </label>
-            <button id="addBook">Add Book</button>
+            <button type="submit" id="addBook">Add Book</button>
         </form>
     </dialog>
     <div id="footer">

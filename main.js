@@ -10,7 +10,7 @@ let myLibrary = [];
 
 
 //constructor function
-function Book(title, author, read, pages) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -36,7 +36,7 @@ const removeBookFromLibrary = (title) => {
   }
 };
 
-//these functions  above act on array of objects only nothing to do with DOM 
+//these functions above act on array of objects only nothing to do with DOM 
 
 // Show book list
 const displayBooks = () => {
@@ -51,16 +51,15 @@ const displayBooks = () => {
 
     // Book Elements
     const titleElement = document.createElement('h2');
-    titleElement.textContent = book.title;
+    titleElement.textContent = `Title:  ${book.title}`;
     titleElement.setAttribute('class', 'title');
 
     const authorElement = document.createElement('strong');
-    authorElement.textContent = book.author;
+    authorElement.textContent = `Author: ${book.author}`;
     authorElement.setAttribute('class', 'author');
 
     const pagesElement = document.createElement('div');
-    console.log("Pages:", book.pages);
-    pagesElement.textContent = book.pages;
+    pagesElement.textContent = `Page Count: ${book.pages}`;
     pagesElement.setAttribute('class', 'pages');
 
     const readElement = document.createElement('div');
@@ -90,6 +89,8 @@ const displayBooks = () => {
   });
 };
 
+//delete button
+
 
 // "Show the dialog" button opens the dialog modally
 showButton.addEventListener("click", () => {
@@ -104,11 +105,12 @@ submit.addEventListener("click", (e) => {
   console.log("Pages input:", pages);
   const read = document.querySelector('#bookRead').checked;
   addBookToLibrary(title, author, pages, read);
+  form.reset();
   displayBooks();
   dialog.close();
-  console.log('i work');
-
 });
+
+
 
 //toggle read status 
 

@@ -43,7 +43,7 @@ body {
 
 }
 
-#removebtn {}
+
 
 #footer {
     display: flex;
@@ -109,10 +109,14 @@ img {
 
 .bookTitle {
     font-size: 45px;
+    text-align: center;
+
 }
 
 .bookAuthor {
     font-size: 30px;
+    text-align: center;
+
 }
 
 .bookPages {
@@ -120,6 +124,9 @@ img {
     text-align: center;
 }
 
+.deleteButton {
+    margin-right: 150px;
+}
 
 
 .book-container {
@@ -132,7 +139,7 @@ img {
     gap: 25px;
 }
 
-.books {
+.card {
     padding: 25px;
     display: flex;
     justify-content: space-between;
@@ -143,11 +150,7 @@ img {
     width: 180px;
     border-style: double;
     border-radius: 15px;
-    font-size: 25px;
 }
-
-
-
 
 .bookbtns>button {
     width: 75px;
@@ -156,22 +159,26 @@ img {
     font-size: 13px;
 }
 
-#removebtn {}
-
-#readbtn {}
-
 /*/ colors 
 -877027
 -A28A2F
 -CCA349
 /*/
 
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    width: 250px;
+    height: 350px;
+    background-color: #54BE9E;
+}
 
-
-
-/*/ keyframes /*/
-@keyframes rotate {}
-
+dialog {
+    background-color: #54BE9E;
+}
 
 
 .card {
@@ -183,4 +190,40 @@ img {
     width: 250px;
     height: 300px;
     border-radius: 20px;
+}
+
+
+
+
+
+/*/ keyframes and animations /*/
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+dialog {
+    animation: fadeIn 0.3s ease-in-out;
+    /* Example animation */
+}
+
+.removeBookAnimation {
+    animation: fadeOut .5s ease-out;
 }
